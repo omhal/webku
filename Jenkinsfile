@@ -5,7 +5,7 @@ pipeline {
       stage('Build') {
          steps {
             sh "docker rm -f \$(docker ps -a -q)"
-            sh "docker-compose -f /var/lib/jenkins/workspace/nginx/docker/docker-compose.yml up --build"
+            sh "docker-compose /var/lib/jenkins/workspace/nginx/docker/docker-compose.yml up -d --build"
          }
       }
    }
