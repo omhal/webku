@@ -1,11 +1,12 @@
-import jenkins.model.*
-jenkins = Jenkins.instance
-
-node{
-
-    stage(‘Build’) {
-
-      sh ‘docker-compose -f /var/lib/jenkins/workspace/nginx/docker/docker-compose.yml up --build’
-    }
-
+pipeline {
+   agent any
+   
+   stages {
+      stage('Build') {
+         steps {
+            sh "docker rm -f \$(docker ps -a -q)"
+            sh "docker-compose -f /var/lib/jenkins/workspace/nginx/docker/docker-compose.yml up --build"
+         }
+      }
+   }
 }
