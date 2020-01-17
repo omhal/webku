@@ -1,8 +1,8 @@
 version: '2'
 services:
  nginx:
-  container_name: testing
-  image: nginx:1.13.8
+  container_name: testing2
+  image: nginx:latest
   volumes:
    - ..:/usr/share/nginx/html
    - ../logs/nginx:/var/log/nginx
