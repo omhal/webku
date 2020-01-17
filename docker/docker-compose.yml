@@ -4,7 +4,7 @@ services:
   container_name: testing
   image: nginx:1.13.8
   volumes:
-   - ..:/usr/share/nginx/html/docker
+   - ..:/usr/share/nginx/html
    - ../logs/nginx:/var/log/nginx
   ports:
    - 80:80
