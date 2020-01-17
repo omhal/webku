@@ -1,0 +1,11 @@
+version: '3'
+     
+  services:
+     nginx_img:
+            container_name: ${COMPOSE_PROJECT_NAME}_nginx_con
+            image: nginx:1.13.8
+            volumes:
+                - ..:/usr/share/nginx/html
+                - ../logs/nginx:/var/log/nginx
+            ports:
+                - 1000:80
