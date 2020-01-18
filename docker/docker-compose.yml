@@ -1,6 +1,7 @@
 version: '2'
 services:
  nginx:
+  restart: always
   container_name: testing2
   image: nginx:latest
   volumes:
